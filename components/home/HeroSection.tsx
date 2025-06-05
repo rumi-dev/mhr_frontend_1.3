@@ -3,8 +3,8 @@
 import type React from "react"
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
 import { Search } from "lucide-react"
+import { motion } from "framer-motion"
 
 const heroImages = [
   {
@@ -54,26 +54,17 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-screen min-h-[600px] overflow-hidden">
-      {/* Background Images with Animation */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={activeImageIndex}
-          className="absolute inset-0 z-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
-        >
-          <Image
-            src={heroImages[activeImageIndex].src || "/placeholder.svg"}
-            alt={heroImages[activeImageIndex].alt}
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </motion.div>
-      </AnimatePresence>
+      {/* Background Images without Animation */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={heroImages[activeImageIndex].src || "/placeholder.svg"}
+          alt={heroImages[activeImageIndex].alt}
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 h-full flex flex-col justify-center">
