@@ -5,6 +5,7 @@ import Partners from "@/components/home/Partners"
 import Consultation from "@/components/home/Consultation"
 
 export default function Home() {
+  //dddd
   return (
     <>
       <HeroSection />
