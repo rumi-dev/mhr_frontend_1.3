@@ -107,7 +107,7 @@ export default function Partners() {
           {/* Horizontal Scrolling Container */}
           <motion.div
             ref={scrollContainerRef}
-            className="flex gap-8 overflow-x-auto scrollbar-hide pb-4 px-12"
+            className="flex gap-8 overflow-x-auto scrollbar-hide pb-4 px-4 sm:px-12 w-[calc(100%-2rem)] mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -115,12 +115,13 @@ export default function Partners() {
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none",
+              WebkitOverflowScrolling: "touch",
             }}
           >
             {partners.map((partner, index) => (
               <motion.div
                 key={partner.id}
-                className="flex-shrink-0 bg-white rounded-lg  hover:shadow-lg transition-all duration-300 p-6 group"
+                className="flex-shrink-0 bg-white rounded-lg hover:shadow-lg transition-all duration-300 p-4 sm:p-6 group"
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
