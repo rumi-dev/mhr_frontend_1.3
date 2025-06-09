@@ -53,16 +53,16 @@ export default function CompanyInfo() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="flex justify-center lg:justify-start">
-                <div className="relative">
-                <Image
-                  src={maskedLogo}
-                  alt="Mystic Heaven Reality Logo"
-                  width={200}
-                  height={200}
-                  className="mb-6"
-                />
-              </div>
+              <div className="flex justify-center w-full">
+                <div className="relative transform scale-125">
+                  <Image
+                    src={maskedLogo}
+                    alt="Mystic Heaven Reality Logo"
+                    width={200}
+                    height={200}
+                    className="mb-6"
+                  />
+                </div>
               </div>
             </motion.div>
 
