@@ -6,6 +6,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { MapPin, Phone, Mail } from "lucide-react"
+import worldMap from "@/app/assets/worldmap.png"
 
 export default function Consultation() {
   const [formData, setFormData] = useState({
@@ -40,7 +41,13 @@ export default function Consultation() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex-1 relative">
-              <Image src="/placeholder.svg?height=400&width=600" alt="Map" fill className="object-cover" />
+              <Image 
+                src={worldMap} 
+                alt="World Map" 
+                fill 
+                className="object-cover" 
+                priority
+              />
             </div>
 
             <div className="p-6 bg-white">

@@ -4,6 +4,10 @@ import { motion } from "framer-motion"
 import PropertyCard from "@/components/ui/PropertyCard"
 import type { Property } from "@/types"
 
+import mainpageFeature1 from "@/app/assets/mainpageFeature1.png"
+import mainpageFeature2 from "@/app/assets/mainpageFeature2.png"
+import mainpageFeature3 from "@/app/assets/mainpageFeature3.png"
+
 const featuredProperties: Property[] = [
   {
     id: "1",
@@ -12,7 +16,7 @@ const featuredProperties: Property[] = [
     location: "Palm Jumeirah, Dubai",
     description:
       "Stunning 5-bedroom villa with private beach access, infinity pool, and panoramic sea views in one of Dubai's most prestigious locations.",
-    image: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FmainpageFeature1.12345678.png&w=1200&q=75",
+    image: mainpageFeature1,
   },
   {
     id: "2",
@@ -21,7 +25,7 @@ const featuredProperties: Property[] = [
     location: "Downtown Dubai",
     description:
       "Contemporary 3-bedroom apartment with Burj Khalifa views, high-end finishes, and access to world-class amenities in the heart of the city.",
-    image: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FmainpageFeature2.12345678.png&w=1200&q=75",
+    image: mainpageFeature2,
   },
   {
     id: "3",
@@ -30,7 +34,7 @@ const featuredProperties: Property[] = [
     location: "Emirates Hills",
     description:
       "Exclusive 7-bedroom mansion with private marina, home theater, and expansive outdoor entertaining areas in a gated community.",
-    image: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FmainpageFeature3.12345678.png&w=1200&q=75",
+    image: mainpageFeature3,
   },
 ]
 

@@ -9,25 +9,31 @@ const stats = [
   { label: "Properties Sold", value: "10000+" },
 ]
 
+import mainpagecompanyinfo1 from "@/app/assets/mainpagecompanyinfo1.png"
+import mainpagecompanyinfo2 from "@/app/assets/mainpagecompanyinfo2.png"
+import mainpagecompanyinfo3 from "@/app/assets/mainpagecompanyinfo3.png"
+import mainpagecompanyinfo4 from "@/app/assets/mainpagecompanyinfo4.png"
+import maskedLogo from "@/app/assets/maskedlogo.png"
+
 const galleryImages = [
   {
     id: 1,
-    src: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmainpagecompanyinfo1.12345678.png&w=1200&q=75",
+    src: mainpagecompanyinfo1,
     alt: "Luxury Development",
   },
   {
     id: 2,
-    src: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmainpagecompanyinfo2.12345678.png&w=1200&q=75",
+    src: mainpagecompanyinfo2,
     alt: "Modern Architecture",
   },
   {
     id: 3,
-    src: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmainpagecompanyinfo3.12345678.png&w=1200&q=75",
+    src: mainpagecompanyinfo3,
     alt: "Luxury Interiors",
   },
   {
     id: 4,
-    src: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmainpagecompanyinfo4.12345678.png&w=1200&q=75",
+    src: mainpagecompanyinfo4,
     alt: "Premium Amenities",
   },
 ]
@@ -50,7 +56,7 @@ export default function CompanyInfo() {
               <div className="flex justify-center lg:justify-start">
                 <div className="relative">
                 <Image
-                  src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmaskedlogo.12345678.png&w=400&q=75"
+                  src={maskedLogo}
                   alt="Mystic Heaven Reality Logo"
                   width={200}
                   height={200}

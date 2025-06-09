@@ -6,41 +6,49 @@ import { useRef } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import type { Partner } from "@/types"
 
+import ourpartners1 from "@/app/assets/ourpartners1.png"
+import ourpartners2 from "@/app/assets/ourpartners2.png"
+import ourpartners3 from "@/app/assets/ourpartners3.png"
+import ourpartners4 from "@/app/assets/ourpartners4.png"
+import ourpartners5 from "@/app/assets/ourpartners5.png"
+import ourpartners6 from "@/app/assets/ourpartners6.png"
+import ourpartners7 from "@/app/assets/ourpartners7.png"
+
 const partners: Partner[] = [
   {
     id: "1",
     name: "Sobha Realty",
-    logo: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fourpartners1.12345678.png&w=400&q=75",
+    logo: ourpartners1,
   },
   {
     id: "2",
     name: "Danube Properties",
-    logo: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fourpartners2.12345678.png&w=400&q=75",
+    logo: ourpartners2,
   },
   {
     id: "3",
     name: "Damac",
-    logo: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fourpartners3.12345678.png&w=400&q=75",
+    logo: ourpartners3,
   },
   {
     id: "4",
     name: "Emaar",
-    logo: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fourpartners4.12345678.png&w=400&q=75",
+    logo: ourpartners4,
   },
-  {
-    id: "5",
-    name: "Arada",
-    logo: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fourpartners5.12345678.png&w=400&q=75",
-  },
-  {
-    id: "6",
-    name: "Nakheel",
-    logo: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fourpartners6.12345678.png&w=400&q=75",
-  },
+  // {
+  //   id: "5",
+  //   name: "Arada",
+  //   logo: ourpartners5,
+  // },
+  // {
+  //   id: "6",
+  //   name: "Nakheel",
+  //   logo: ourpartners6,
+  // },
   {
     id: "7",
     name: "Meraas",
-    logo: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fourpartners7.12345678.png&w=400&q=75",
+    logo: ourpartners7,
   },
 ]
 
@@ -112,7 +120,7 @@ export default function Partners() {
             {partners.map((partner, index) => (
               <motion.div
                 key={partner.id}
-                className="flex-shrink-0 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-6 group"
+                className="flex-shrink-0 bg-white rounded-lg  hover:shadow-lg transition-all duration-300 p-6 group"
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -121,10 +129,10 @@ export default function Partners() {
               >
                 <div className="w-48 h-24 relative">
                   <Image
-                    src={partner.logo || "/placeholder.svg"}
+                    src={partner.logo}
                     alt={partner.name}
                     fill
-                    className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="object-contain filter  group-hover:grayscale-0 transition-all duration-300"
                   />
                 </div>
               </motion.div>
@@ -137,7 +145,7 @@ export default function Partners() {
         </div>
 
         {/* Auto-scroll Animation */}
-        <motion.div
+        {/* <motion.div
           className="flex gap-8 overflow-hidden mt-8"
           initial={{ x: 0 }}
           animate={{ x: "-100%" }}
@@ -159,7 +167,7 @@ export default function Partners() {
               </div>
             </div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
 
       <style jsx>{`
