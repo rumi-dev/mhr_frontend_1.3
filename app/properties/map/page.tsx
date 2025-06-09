@@ -4,6 +4,11 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Search, Phone, Mail, MessageCircle } from "lucide-react"
+import propertyimage1 from "@/app/assets/propertyimage1.png"
+import propertyimage2 from "@/app/assets/propertyimage2.png"
+import propertyimage3 from "@/app/assets/propertyimage3.png"
+import propertyimage4 from "@/app/assets/propertyimage4.png"
+import graphwave from "@/app/assets/graphwave.png"
 
 const properties = [
   {
@@ -12,7 +17,7 @@ const properties = [
     location: "New York, New York, NY",
     price: "$300000",
     type: "Villa",
-    image: "/placeholder.svg?height=200&width=300",
+    image: propertyimage1,
     developer: "EMAAR",
   },
   {
@@ -21,7 +26,7 @@ const properties = [
     location: "New York, New York, NY",
     price: "$300000",
     type: "Villa",
-    image: "/placeholder.svg?height=200&width=300",
+    image: propertyimage2,
     developer: "EMAAR",
   },
   {
@@ -30,7 +35,7 @@ const properties = [
     location: "New York, New York, NY",
     price: "$300000",
     type: "Villa",
-    image: "/placeholder.svg?height=200&width=300",
+    image: propertyimage3,
     developer: "EMAAR",
   },
   {
@@ -39,7 +44,7 @@ const properties = [
     location: "New York, New York, NY",
     price: "$300000",
     type: "Villa",
-    image: "/placeholder.svg?height=200&width=300",
+    image: propertyimage4,
     developer: "EMAAR",
   },
 ]
@@ -57,7 +62,18 @@ export default function ViewDetailsPage() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <div className="mb-8">
+          <div className="flex justify-center">
+            <div className="scale-125">
+              <Image 
+                src={graphwave} 
+                alt="Graph Wave" 
+                width={300}
+                height={100}
+                className="h-12 w-auto object-contain"
+              />
+            </div>
+          </div>
+          <div>
             <div className="flex justify-center items-center space-x-4 mb-8">
               <Search className="w-6 h-6" />
               <input
@@ -65,8 +81,8 @@ export default function ViewDetailsPage() {
                 placeholder="Enter City, Community or Area"
                 className="bg-white/10 border border-white/30 rounded-md px-4 py-3 text-white placeholder-white/70 w-96"
               />
-              <select className="bg-white/10 border border-white/30 rounded-md px-4 py-3 text-white">
-                <option>Villa</option>
+              <select className="bg-black/5 border border-white/30 rounded-md px-4 py-3 text-white">
+                <option >Villa</option>
                 <option>Apartment</option>
                 <option>Penthouse</option>
               </select>
@@ -78,9 +94,9 @@ export default function ViewDetailsPage() {
       {/* Main Content */}
       <section className="py-8">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-[600px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-[600px] w-full">
             {/* Map Section */}
-            <div className="relative">
+            <div className="relative w-full h-full">
               <h2 className="text-2xl font-bold text-white mb-4">LUXURY PROPERTIES</h2>
 
               {/* Location Tabs */}
@@ -104,19 +120,19 @@ export default function ViewDetailsPage() {
               </div>
 
               {/* Map */}
-              <div className="relative h-full bg-gray-800 rounded-lg overflow-hidden">
-                <Image src="/placeholder.svg?height=500&width=600" alt="Map" fill className="object-cover opacity-80" />
-                {/* Map markers would go here */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                    4
-                  </div>
-                </div>
+              <div className="relative h-[500px] bg-gray-800 rounded-lg overflow-hidden">
+                <Image 
+                  src={require('@/app/assets/viewmapPageMap.png')} 
+                  alt="Map" 
+                  fill 
+                  className="object-cover" 
+                />
+               
               </div>
             </div>
 
             {/* Properties List */}
-            <div className="space-y-4 overflow-y-auto">
+            <div className="space-y-4 overflow-y-auto pr-2">
               {properties.map((property, index) => (
                 <motion.div
                   key={property.id}
@@ -125,15 +141,16 @@ export default function ViewDetailsPage() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="flex">
-                    <div className="w-1/3">
-                      <Image
-                        src={property.image || "/placeholder.svg"}
-                        alt={property.title}
-                        width={300}
-                        height={200}
-                        className="w-full h-32 object-cover"
-                      />
+                  <div className="flex w-full">
+                    <div className="w-1/3 flex-shrink-0">
+                      <div className="relative w-full h-32">
+                        <Image
+                          src={property.image || "/placeholder.svg"}
+                          alt={property.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
                     </div>
                     <div className="w-2/3 p-4">
                       <h3 className="font-bold mb-1">{property.title}</h3>

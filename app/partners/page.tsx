@@ -2,57 +2,65 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import ourpartners1 from "@/app/assets/ourpartners1.png"
+import ourpartners2 from "@/app/assets/ourpartners2.png"
+import ourpartners3 from "@/app/assets/ourpartners3.png"
+import ourpartners5 from "@/app/assets/ourpartners5.png"
+import ourpartners6 from "@/app/assets/ourpartners6.png"
+import ourpartners7 from "@/app/assets/ourpartners7.png"
+import ourpartners4 from "@/app/assets/ourpartners4.png"
+import partnerpageheroimage from "@/app/assets/partnerpageheroimage.png"
 
-const partners = [
+const partners = [ 
   {
     id: "1",
     name: "Danube Properties",
-    logo: "/placeholder.svg?height=80&width=200",
+    logo: ourpartners1,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "2",
     name: "Sobha Realty",
-    logo: "/placeholder.svg?height=80&width=200",
+    logo: ourpartners2,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "3",
     name: "Damac",
-    logo: "/placeholder.svg?height=80&width=200",
+    logo: ourpartners3,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "4",
     name: "Arada",
-    logo: "/placeholder.svg?height=80&width=200",
+    logo: ourpartners5,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "5",
     name: "Emaar",
-    logo: "/placeholder.svg?height=80&width=200",
+    logo: ourpartners4,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "6",
     name: "Danube Properties",
-    logo: "/placeholder.svg?height=80&width=200",
+    logo: ourpartners6,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ]
 
 const topPartners = [
-  { name: "Danube Properties", logo: "/placeholder.svg?height=60&width=150" },
-  { name: "Sobha Realty", logo: "/placeholder.svg?height=60&width=150" },
-  { name: "Damac", logo: "/placeholder.svg?height=60&width=150" },
-  { name: "Arada", logo: "/placeholder.svg?height=60&width=150" },
+  { name: "Danube Properties", logo: ourpartners1 },
+  { name: "Sobha Realty", logo: ourpartners2 },
+  { name: "Damac", logo: ourpartners3 },
+  { name: "Arada", logo: ourpartners5 },
 ]
 
 export default function PartnersPage() {
@@ -62,8 +70,8 @@ export default function PartnersPage() {
       <section className="relative h-screen flex flex-col justify-center items-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=800&width=1200"
-            alt="Dubai Skyline"
+            src={partnerpageheroimage}
+            alt="Our Partners"
             fill
             className="object-cover"
             priority
@@ -124,25 +132,29 @@ export default function PartnersPage() {
             {partners.map((partner, index) => (
               <motion.div
                 key={partner.id}
-                className="bg-white rounded-lg p-6 shadow-lg"
+                className="flex flex-col h-full bg-white rounded-lg p-6 shadow-lg"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="text-center mb-4">
-                  <Image
-                    src={partner.logo || "/placeholder.svg"}
-                    alt={partner.name}
-                    width={200}
-                    height={80}
-                    className="mx-auto mb-4"
-                  />
+                <div className="flex-grow">
+                  <div className="text-center mb-4">
+                    <Image
+                      src={partner.logo || "/placeholder.svg"}
+                      alt={partner.name}
+                      width={200}
+                      height={80}
+                      className="mx-auto mb-4"
+                    />
+                  </div>
+                  <p className="text-gray-600 text-sm mb-6 leading-relaxed">{partner.description}</p>
                 </div>
-                <p className="text-gray-600 text-sm mb-6 leading-relaxed">{partner.description}</p>
-                <button className="w-full bg-primary-700 hover:bg-primary-800 text-white py-3 px-4 rounded-md transition-colors">
-                  View Details
-                </button>
+                <div className="mt-4">
+                  <button className="w-full bg-primary-700 hover:bg-primary-800 text-white py-3 px-4 rounded-md transition-colors">
+                    View Details
+                  </button>
+                </div>
               </motion.div>
             ))}
           </div>

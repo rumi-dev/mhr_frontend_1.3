@@ -5,6 +5,11 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { MapPin } from "lucide-react"
 import Link from "next/link"
+import propertiesHeroImage from "@/app/assets/propertiesHeroImage.png"
+import propertyimage1 from "@/app/assets/propertyimage1.png"
+import propertyimage2 from "@/app/assets/propertyimage2.png"
+import propertyimage3 from "@/app/assets/propertyimage3.png"
+import propertyimage4 from "@/app/assets/propertyimage4.png"
 
 const properties = [
   {
@@ -13,7 +18,7 @@ const properties = [
     location: "New York, New York, NY",
     price: "$300000",
     type: "Villa",
-    image: "/placeholder.svg?height=250&width=350",
+    image: propertyimage1,
     developer: "EMAAR",
   },
   {
@@ -22,7 +27,7 @@ const properties = [
     location: "New York, New York, NY",
     price: "$300000",
     type: "Villa",
-    image: "/placeholder.svg?height=250&width=350",
+    image: propertyimage2,
     developer: "EMAAR",
   },
   {
@@ -31,7 +36,7 @@ const properties = [
     location: "New York, New York, NY",
     price: "$300000",
     type: "Villa",
-    image: "/placeholder.svg?height=250&width=350",
+    image: propertyimage3,
     developer: "EMAAR",
   },
   {
@@ -40,7 +45,7 @@ const properties = [
     location: "New York, New York, NY",
     price: "$300000",
     type: "Villa",
-    image: "/placeholder.svg?height=250&width=350",
+    image: propertyimage4,
     developer: "EMAAR",
   },
 ]
@@ -61,7 +66,7 @@ export default function PropertiesPage() {
       <section className="relative h-screen flex flex-col justify-center items-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=800&width=1200"
+            src={propertiesHeroImage}
             alt="City Skyline"
             fill
             className="object-cover"
@@ -89,7 +94,7 @@ export default function PropertiesPage() {
           </motion.h1>
 
           <motion.div
-            className="flex space-x-2 mb-8"
+            className="flex justify-center space-x-2 mb-8 w-full"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}

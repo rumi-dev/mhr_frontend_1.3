@@ -7,6 +7,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Instagram, Linkedin, Facebook, Mail } from "lucide-react"
+import contactusPageHeroImage from "@/app/assets/contactusPageHeroImage.png"
+import contactUsPageFormBackground from "@/app/assets/contactUsPageFormBackground.png"
+import maskedlogo from "@/app/assets/maskedlogo.png"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -35,7 +38,7 @@ export default function ContactPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=800&width=1200"
+            src={contactusPageHeroImage}
             alt="Dubai Skyline"
             fill
             className="object-cover"
@@ -66,11 +69,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="relative py-16 overflow-hidden">
+      {/* Contact Form & Social Media Section */}
+      <section className="relative py-16 overflow-hidden bg-gray-900">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <Image src="/placeholder.svg?height=600&width=1200" alt="Background" fill className="object-cover" />
+          <Image src={contactUsPageFormBackground} alt="Background" fill className="object-cover" />
           <div className="absolute inset-0 bg-black/60" />
         </div>
 
@@ -83,14 +86,52 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h2>
-            <p className="text-white/90 text-lg max-w-2xl mx-auto">
-              Get in touch with Mystic Haven Realty We're here to help you find your dream home or the perfect
+            <p className="text-white/90 text-lg max-w-2xl mx-auto mb-12">
+              Get in touch with Mystic Haven Realty. We're here to help you find your dream home or the perfect
               investment property.
             </p>
+            
+            {/* Social Media Icons */}
+            <motion.div
+              className="flex justify-center space-x-6 mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Link
+                href="https://instagram.com"
+                className="bg-white p-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-110"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-6 h-6 text-gray-800" />
+              </Link>
+              <Link
+                href="https://linkedin.com"
+                className="bg-white p-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-110"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-6 h-6 text-gray-800" />
+              </Link>
+              <Link
+                href="https://facebook.com"
+                className="bg-white p-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-110"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-6 h-6 text-gray-800" />
+              </Link>
+              <Link
+                href="mailto:info@mysticheavenrealty.com"
+                className="bg-white p-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-110"
+                aria-label="Email"
+              >
+                <Mail className="w-6 h-6 text-gray-800" />
+              </Link>
+            </motion.div>
           </motion.div>
 
           <motion.div
-            className="max-w-4xl mx-auto"
+            className="max-w-4xl mx-auto bg-white/5 backdrop-blur-md rounded-xl p-8 shadow-2xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -171,179 +212,6 @@ export default function ContactPage() {
           </motion.div>
         </div>
       </section>
-
-      {/* Social Media Section */}
-      <section className="py-16 bg-gray-900">
-        <div className="container mx-auto px-4 text-center">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-white mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            Get In To Touch
-          </motion.h2>
-
-          <motion.div
-            className="flex justify-center space-x-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <Link
-              href="https://instagram.com"
-              className="bg-white p-4 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-110"
-            >
-              <Instagram className="w-8 h-8 text-gray-800" />
-            </Link>
-            <Link
-              href="https://linkedin.com"
-              className="bg-white p-4 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-110"
-            >
-              <Linkedin className="w-8 h-8 text-gray-800" />
-            </Link>
-            <Link
-              href="https://facebook.com"
-              className="bg-white p-4 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-110"
-            >
-              <Facebook className="w-8 h-8 text-gray-800" />
-            </Link>
-            <Link
-              href="mailto:info@mysticheavenrealty.com"
-              className="bg-white p-4 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-110"
-            >
-              <Mail className="w-8 h-8 text-gray-800" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Footer Section */}
-      <footer className="bg-primary-800 text-white">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {/* Company Info */}
-            <div>
-              <div className="flex items-center mb-4">
-                <Image
-                  src="/placeholder.svg?height=40&width=40"
-                  alt="Mystic Heaven Reality"
-                  width={40}
-                  height={40}
-                  className="mr-2"
-                />
-              </div>
-              <h3 className="text-lg font-semibold mb-4">Company Info</h3>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/about" className="hover:text-pink-400 transition-colors">
-                    About Mystic Haven Reality
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/mission" className="hover:text-pink-400 transition-colors">
-                    Our Mission
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/partner" className="hover:text-pink-400 transition-colors">
-                    Trusted Channel Partner
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/" className="hover:text-pink-400 transition-colors">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/properties" className="hover:text-pink-400 transition-colors">
-                    Properties
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="hover:text-pink-400 transition-colors">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/buyers" className="hover:text-pink-400 transition-colors">
-                    For Buyers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/partners" className="hover:text-pink-400 transition-colors">
-                    Partners
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-pink-400 transition-colors">
-                    Contact Us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contact Information */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Contact Information</h3>
-              <div className="space-y-2 text-sm">
-                <p>
-                  <span className="font-medium">Office Address:</span>
-                  <br />
-                  <span className="text-white/80">[Your Address Here]</span>
-                </p>
-                <p>
-                  <span className="font-medium">Phone:</span>
-                  <br />
-                  <span className="text-white/80">[Your Number]</span>
-                </p>
-                <p>
-                  <span className="font-medium">Email:</span>
-                  <br />
-                  <span className="text-white/80">[Your Email]</span>
-                </p>
-              </div>
-            </div>
-
-            {/* Follow Us */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-              <div className="space-y-2 text-sm">
-                <p>
-                  <Link href="https://facebook.com" className="hover:text-pink-400 transition-colors">
-                    Facebook
-                  </Link>{" "}
-                  |{" "}
-                  <Link href="https://instagram.com" className="hover:text-pink-400 transition-colors">
-                    Instagram
-                  </Link>{" "}
-                  |{" "}
-                  <Link href="https://linkedin.com" className="hover:text-pink-400 transition-colors">
-                    LinkedIn
-                  </Link>{" "}
-                  |{" "}
-                  <Link href="https://twitter.com" className="hover:text-pink-400 transition-colors">
-                    Twitter
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-white/20 mt-8 pt-8 text-center text-sm">
-            <p>© 2025 Mystic Haven Reality . All Rights Reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Globe } from "lucide-react"
+import mhrLogo from "@/app/assets/MHR Logo.png"
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -28,11 +29,12 @@ export default function Header() {
       <div className="container mx-auto flex justify-between items-center p-4">
         <Link href="/" className="flex items-center">
           <Image
-            src="/placeholder.svg?height=40&width=40"
+            src={mhrLogo}
             alt="Mystic Heaven Reality"
-            width={40}
+            width={120}
             height={40}
-            className="mr-2"
+            className="h-10 w-auto object-contain"
+            priority
           />
         </Link>
 

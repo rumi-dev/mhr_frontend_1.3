@@ -1,16 +1,28 @@
 import Link from "next/link"
 import Image from "next/image"
+import mhrLogo from "@/app/assets/MHR Logo.png"
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-800 text-white">
+    <footer className="bg-[#5E2D4F] text-white">
       <div className="container mx-auto px-4 py-12">
+        {/* Logo Section */}
+        <div className="flex justify-start mb-8">
+          <Link href="/" className="flex items-center">
+            <Image
+              src={mhrLogo}
+              alt="Mystic Heaven Reality"
+              width={150}
+              height={60}
+              className="h-12 w-auto object-contain"
+              priority
+            />
+          </Link>
+        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center mb-4">
-              <Image src="/images/logo.png" alt="Mystic Heaven Reality" width={40} height={40} className="mr-2" />
-            </div>
             <h3 className="text-lg font-semibold mb-2">Company Info</h3>
             <ul className="space-y-2">
               <li>

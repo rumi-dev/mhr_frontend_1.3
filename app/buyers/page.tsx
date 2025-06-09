@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import forBuyersHeroImg from "@/app/assets/forBuyersHeroImg.png"
+import forBuyersGuideImage from "@/app/assets/forBuyersGuideImage.png"
 
 const buyingSteps = [
   {
@@ -55,7 +57,7 @@ export default function BuyersPage() {
       <section className="relative h-screen flex flex-col justify-center items-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=800&width=1200"
+            src={forBuyersHeroImg}
             alt="Dubai Skyline"
             fill
             className="object-cover"
@@ -87,7 +89,13 @@ export default function BuyersPage() {
       {/* Buying Guide Section */}
       <section className="relative py-16 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/placeholder.svg?height=800&width=1200" alt="Background" fill className="object-cover" />
+          <Image 
+            src={forBuyersGuideImage} 
+            alt="Buying Guide Background" 
+            fill 
+            className="object-cover" 
+            priority
+          />
           <div className="absolute inset-0 bg-black/80" />
         </div>
 
@@ -102,34 +110,43 @@ export default function BuyersPage() {
             <h2 className="text-4xl font-bold mb-4">Buying Guide</h2>
           </motion.div>
 
-          <div className="space-y-12">
-            {buyingSteps.map((item, index) => (
-              <motion.div
-                key={item.step}
-                className={`flex flex-col md:flex-row items-start gap-6 ${
-                  index % 2 === 1 ? "md:flex-row-reverse" : ""
-                }`}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <div className="flex-1">
-                  <h3 className={`text-2xl font-bold mb-3 ${item.color}`}>
-                    Step {item.step}: {item.title}
-                  </h3>
-                  <p className="text-gray-300 mb-2">{item.description}</p>
-                  <p className="text-gray-400 text-sm">{item.subtext}</p>
-                </div>
-              </motion.div>
-            ))}
+          <div className="w-full px-4">
+            <div className="mx-auto max-w-7xl">
+              <div className="flex flex-col items-center gap-8">
+                {buyingSteps.map((item, index) => {
+                  // Determine alignment based on index
+                  const alignment = index % 2 === 0 ? 'self-start' : 'self-end';
+                  
+                  return (
+                    <motion.div
+                      key={item.step}
+                      className={`bg-white/10 backdrop-blur-sm rounded-lg p-6 w-full md:w-1/2 ${alignment}`}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <div className="flex flex-col md:flex-row gap-6 items-start">
+                        <div className={`text-5xl font-bold ${item.color} min-w-[60px]`}>{item.step}</div>
+                        <div>
+                          <h3 className="text-xl font-bold mb-2 text-white">{item.title}</h3>
+                          <p className="text-gray-200 mb-2">{item.description}</p>
+                          <p className="text-gray-300 text-sm">{item.subtext}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Additional Sections */}
-      <section className="py-16 bg-gradient-to-b from-purple-900 to-purple-800 text-white">
-        <div className="container mx-auto px-4">
+      <section className="relative py-16 bg-black text-white">
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-purple-900/80 to-transparent z-0"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="space-y-12">
             {/* Financing Options */}
             <motion.div
@@ -137,6 +154,7 @@ export default function BuyersPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="bg-black/80 backdrop-blur-sm p-8 rounded-lg"
             >
               <h2 className="text-3xl font-bold mb-6 text-pink-400">Financing Options</h2>
               <div className="space-y-4">

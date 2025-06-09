@@ -4,33 +4,37 @@ import { motion } from "framer-motion"
 import PropertyCard from "@/components/ui/PropertyCard"
 import type { Property } from "@/types"
 
+import mainpageFeature1 from "@/app/assets/mainpageFeature1.png"
+import mainpageFeature2 from "@/app/assets/mainpageFeature2.png"
+import mainpageFeature3 from "@/app/assets/mainpageFeature3.png"
+
 const featuredProperties: Property[] = [
   {
     id: "1",
-    title: "Title",
-    price: "Price",
-    location: "Location",
+    title: "Luxury Villa",
+    price: "$1,200,000",
+    location: "Palm Jumeirah, Dubai",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "/placeholder.svg?height=300&width=400",
+      "Stunning 5-bedroom villa with private beach access, infinity pool, and panoramic sea views in one of Dubai's most prestigious locations.",
+    image: mainpageFeature1,
   },
   {
     id: "2",
-    title: "Title",
-    price: "Price",
-    location: "Location",
+    title: "Modern Apartment",
+    price: "$850,000",
+    location: "Downtown Dubai",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "/placeholder.svg?height=300&width=400",
+      "Contemporary 3-bedroom apartment with Burj Khalifa views, high-end finishes, and access to world-class amenities in the heart of the city.",
+    image: mainpageFeature2,
   },
   {
     id: "3",
-    title: "Title",
-    price: "Price",
-    location: "Location",
+    title: "Waterfront Mansion",
+    price: "$3,500,000",
+    location: "Emirates Hills",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "/placeholder.svg?height=300&width=400",
+      "Exclusive 7-bedroom mansion with private marina, home theater, and expansive outdoor entertaining areas in a gated community.",
+    image: mainpageFeature3,
   },
 ]
 
