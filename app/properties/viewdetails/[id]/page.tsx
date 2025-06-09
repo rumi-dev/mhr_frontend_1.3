@@ -4,6 +4,10 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { MapPin, Bed, Square, Check, Globe } from "lucide-react"
+import propertyimage1 from "@/app/assets/propertyimage1.png"
+import propertyimage2 from "@/app/assets/propertyimage2.png"
+import propertyimage3 from "@/app/assets/propertyimage3.png"
+import propertyimage4 from "@/app/assets/propertyimage4.png"
 
 const features = ["Swimming Pool", "Sea View", "Private Pool", "Smart Home Tech"]
 
@@ -11,55 +15,12 @@ const amenities = ["Gym", "Security", "Parking", "Gardens"]
 
 export default function PropertyDetailPage({ params }: { params: { id: string } }) {
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Header */}
-      <header className="absolute top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link href="/" className="flex items-center">
-              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                <div className="text-black font-bold text-xl">MH</div>
-              </div>
-            </Link>
-
-            {/* Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-white hover:text-primary-400 transition-colors">
-                Home
-              </Link>
-              <div className="flex items-center text-white">
-                <span className="mr-1">▶</span>
-                <Link href="/properties" className="hover:text-primary-400 transition-colors">
-                  Properties
-                </Link>
-              </div>
-              <Link href="/about" className="text-white hover:text-primary-400 transition-colors">
-                About Us
-              </Link>
-              <Link href="/buyers" className="text-white hover:text-primary-400 transition-colors">
-                For Buyers
-              </Link>
-              <Link href="/partners" className="text-white hover:text-primary-400 transition-colors">
-                Partners
-              </Link>
-              <Link href="/contact" className="text-white hover:text-primary-400 transition-colors">
-                Contact Us
-              </Link>
-            </nav>
-
-            {/* Globe Icon */}
-            <button className="text-white hover:text-primary-400 transition-colors">
-              <Globe className="w-6 h-6" />
-            </button>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-black text-white pt-20">
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/hero-villa-1.png" alt="Luxury Villa" fill className="object-cover" priority />
+          <Image src={propertyimage1} alt="Luxury Villa" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-black/30" />
         </div>
 
@@ -107,7 +68,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
             >
               <div className="relative rounded-lg overflow-hidden">
                 <Image
-                  src="/images/luxury-entrance.png"
+                  src={propertyimage2}
                   alt="The Oasis Property"
                   width={600}
                   height={500}
@@ -198,7 +159,12 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Image src="/images/sharjah-map.png" alt="Location Map - Sharjah/Ajman" fill className="object-cover" />
+            <Image 
+              src={require('@/app/assets/viewmapPageMap.png')} 
+              alt="Property Location" 
+              fill 
+              className="object-cover" 
+            />
             {/* Map Marker */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <div className="bg-blue-600 w-12 h-16 relative">
@@ -213,86 +179,6 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-purple-900 text-white">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {/* Company Info */}
-            <div>
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4">
-                  <div className="text-purple-900 font-bold text-xl">MH</div>
-                </div>
-              </div>
-              <h3 className="text-lg font-semibold mb-4">Company Info</h3>
-              <ul className="space-y-2 text-sm">
-                <li>About Mystic Haven Realty</li>
-                <li>Our Mission</li>
-                <li>Trusted Channel Partner</li>
-              </ul>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/" className="hover:text-purple-300 transition-colors">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/properties" className="hover:text-purple-300 transition-colors">
-                    Properties
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="hover:text-purple-300 transition-colors">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/buyers" className="hover:text-purple-300 transition-colors">
-                    For Buyers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/partners" className="hover:text-purple-300 transition-colors">
-                    Partners
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-purple-300 transition-colors">
-                    Contact Us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contact Information */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Contact Information</h3>
-              <div className="space-y-2 text-sm">
-                <p>Office Address: [Your Address Here]</p>
-                <p>Phone: [Your Number]</p>
-                <p>Email: [Your Email]</p>
-              </div>
-            </div>
-
-            {/* Follow Us */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-              <div className="space-y-2 text-sm">
-                <p>Facebook | Instagram | LinkedIn | Twitter</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-purple-700 mt-8 pt-8 text-center text-sm">
-            <p>© 2025 Mystic Haven Realty. All Rights Reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

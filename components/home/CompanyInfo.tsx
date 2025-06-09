@@ -12,23 +12,23 @@ const stats = [
 const galleryImages = [
   {
     id: 1,
-    src: "/images/dubai-waterfront.png",
-    alt: "Dubai Waterfront Development",
+    src: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmainpagecompanyinfo1.12345678.png&w=1200&q=75",
+    alt: "Luxury Development",
   },
   {
     id: 2,
-    src: "/images/emaar-tower.png",
-    alt: "EMAAR Tower Development",
-  },
-  {
-    id: 3,
-    src: "/images/modern-architecture.png",
+    src: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmainpagecompanyinfo2.12345678.png&w=1200&q=75",
     alt: "Modern Architecture",
   },
   {
+    id: 3,
+    src: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmainpagecompanyinfo3.12345678.png&w=1200&q=75",
+    alt: "Luxury Interiors",
+  },
+  {
     id: 4,
-    src: "/images/city-view-property.png",
-    alt: "City View Properties",
+    src: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmainpagecompanyinfo4.12345678.png&w=1200&q=75",
+    alt: "Premium Amenities",
   },
 ]
 
@@ -48,13 +48,15 @@ export default function CompanyInfo() {
               transition={{ duration: 0.5 }}
             >
               <div className="flex justify-center lg:justify-start">
+                <div className="relative">
                 <Image
-                  src="/placeholder.svg?height=200&width=200"
+                  src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmaskedlogo.12345678.png&w=400&q=75"
                   alt="Mystic Heaven Reality Logo"
                   width={200}
                   height={200}
                   className="mb-6"
                 />
+              </div>
               </div>
             </motion.div>
 

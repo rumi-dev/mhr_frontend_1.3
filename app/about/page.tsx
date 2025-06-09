@@ -2,12 +2,19 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import aboutpageheroimage from "@/app/assets/aboutpageheroimage.png"
+import aboutUsPageExploreImg1 from "@/app/assets/aboutUsPageExploreImg1.png"
+import aboutUsPageExploreImg2 from "@/app/assets/aboutUsPageExploreImg2.png"
+import aboutUsPageExploreImg3 from "@/app/assets/aboutUsPageExploreImg3.png"
+import aboutUsPageExploreImg4 from "@/app/assets/aboutUsPageExploreImg4.png"
+import aboutuspagesection2image from "@/app/assets/aboutuspagesection2image.png"
+import aboutusPage3rdImage from "@/app/assets/aboutusPage3rdImage.png"
 
 const projectImages = [
-  "/placeholder.svg?height=200&width=300",
-  "/placeholder.svg?height=200&width=300",
-  "/placeholder.svg?height=200&width=300",
-  "/placeholder.svg?height=200&width=300",
+  aboutUsPageExploreImg1,
+  aboutUsPageExploreImg2,
+  aboutUsPageExploreImg3,
+  aboutUsPageExploreImg4,
 ]
 
 export default function AboutPage() {
@@ -17,8 +24,8 @@ export default function AboutPage() {
       <section className="relative h-screen flex flex-col justify-center items-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=800&width=1200"
-            alt="City Skyline"
+            src={aboutpageheroimage}
+            alt="About Us Hero"
             fill
             className="object-cover"
             priority
@@ -38,19 +45,23 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* About Us Section */}
-      <section className="py-8 bg-gray-800 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-2">About Us</h2>
-          <p className="text-xl">Guiding Your Home</p>
-        </div>
-      </section>
-
       {/* Content Sections */}
       <section className="relative py-16 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/placeholder.svg?height=800&width=1200" alt="Building Background" fill className="object-cover" />
+          <Image src={aboutuspagesection2image} alt="Building Background" fill className="object-cover" />
           <div className="absolute inset-0 bg-black/70" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10 text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-4xl font-bold mb-2">About Us</h2>
+            <p className="text-xl text-pink-400">Guiding Your Home</p>
+          </motion.div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -131,8 +142,12 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center">
-        <div className="container mx-auto px-4">
+      <section className="relative py-16 text-white text-center">
+        <div className="absolute inset-0 z-0">
+          <Image src={aboutusPage3rdImage} alt="Building Background" fill className="object-cover" />
+          <div className="absolute inset-0 bg-black/70" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

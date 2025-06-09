@@ -10,32 +10,37 @@ const partners: Partner[] = [
   {
     id: "1",
     name: "Sobha Realty",
-    logo: "/placeholder.svg?height=100&width=200",
+    logo: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fourpartners1.12345678.png&w=400&q=75",
   },
   {
     id: "2",
     name: "Danube Properties",
-    logo: "/placeholder.svg?height=100&width=200",
+    logo: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fourpartners2.12345678.png&w=400&q=75",
   },
   {
     id: "3",
     name: "Damac",
-    logo: "/placeholder.svg?height=100&width=200",
+    logo: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fourpartners3.12345678.png&w=400&q=75",
   },
   {
     id: "4",
     name: "Emaar",
-    logo: "/placeholder.svg?height=100&width=200",
+    logo: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fourpartners4.12345678.png&w=400&q=75",
   },
   {
     id: "5",
     name: "Arada",
-    logo: "/images/arada-logo-black.png",
+    logo: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fourpartners5.12345678.png&w=400&q=75",
   },
   {
     id: "6",
     name: "Nakheel",
-    logo: "/placeholder.svg?height=100&width=200",
+    logo: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fourpartners6.12345678.png&w=400&q=75",
+  },
+  {
+    id: "7",
+    name: "Meraas",
+    logo: "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fourpartners7.12345678.png&w=400&q=75",
   },
 ]
 
