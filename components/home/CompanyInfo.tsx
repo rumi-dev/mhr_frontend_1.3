@@ -53,14 +53,14 @@ export default function CompanyInfo() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="flex justify-center w-full">
-                <div className="relative transform scale-125">
+              <div className="flex justify-center w-full overflow-hidden py-4">
+                <div className="relative w-[200px] h-[200px] mx-auto">
                   <Image
                     src={maskedLogo}
                     alt="Mystic Heaven Reality Logo"
                     width={200}
                     height={200}
-                    className="mb-6"
+                    className="object-contain w-full h-full"
                   />
                 </div>
               </div>
