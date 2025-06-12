@@ -11,28 +11,28 @@ const buyingSteps = [
     title: "Define Your Requirements",
     description: "Decide on location, budget, and property type (apartment, villa, townhouse)",
     subtext: "Consider future investment value and lifestyle preferences.",
-    color: "text-pink-400",
+    color: "text-[var(--primary)]",
   },
   {
     step: 2,
     title: "Explore Properties",
     description: "Browse listings from top developers like Sobha, Akadia, Damac, and Nakheel",
     subtext: "Schedule property viewings with our expert real estate agents.",
-    color: "text-pink-400",
+    color: "text-[var(--primary)]",
   },
   {
     step: 3,
     title: "Secure Financing",
     description: "Choose between a bank mortgage or developer payment plans",
     subtext: "Submit required documents for loan approval",
-    color: "text-pink-400",
+    color: "text-[var(--primary)]",
   },
   {
     step: 4,
     title: "Make an Offer & Sign the Agreement",
     description: "Negotiate the price and sign a Sales Purchase Agreement (SPA)",
     subtext: "& Pay the initial deposit (usually 5-10% of the property price)",
-    color: "text-pink-400",
+    color: "text-[var(--primary)]",
   },
   {
     step: 5,
@@ -46,7 +46,7 @@ const buyingSteps = [
     title: "Property Handover & Registration",
     description: "Arrange property valuation and necessary approvals",
     subtext: "Pay the remaining amount as per the agreed plan.",
-    color: "text-pink-400",
+    color: "text-[var(--primary)]",
   },
 ]
 
@@ -156,7 +156,7 @@ export default function BuyersPage() {
               transition={{ duration: 0.6 }}
               className="bg-black/80 backdrop-blur-sm p-8 rounded-lg"
             >
-              <h2 className="text-3xl font-bold mb-6 text-pink-400">Financing Options</h2>
+              <h2 className="text-3xl font-bold mb-6 text-[var(--primary)]">Financing Options</h2>
               <div className="space-y-4">
                 <p>Easy Installment Plans-Spread payments over months or years</p>
                 <p>Post-Handover Payment Options-Pay after moving in</p>
@@ -171,7 +171,7 @@ export default function BuyersPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h2 className="text-3xl font-bold mb-6 text-pink-400">Need Assistance?</h2>
+              <h2 className="text-3xl font-bold mb-6 text-[var(--primary)]">Need Assistance?</h2>
               <p>Our experts can guide you in choosing the best financing option based on your budget and needs.</p>
             </motion.div>
 
@@ -182,7 +182,7 @@ export default function BuyersPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <h2 className="text-3xl font-bold mb-6 text-pink-400">Working with Mystic Haven Reality</h2>
+              <h2 className="text-3xl font-bold mb-6 text-[var(--primary)]">Working with Mystic Haven Reality</h2>
               <div className="space-y-4">
                 <p>
                   Exclusive Listings-Access to premium properties from Sobha, Akadia, Damac, and Nakheel Expert

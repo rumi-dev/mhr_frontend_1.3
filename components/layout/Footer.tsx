@@ -4,13 +4,13 @@ import mhrLogo from "@/app/assets/MHR Logo.png"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#5E2D4F] text-white">
+    <footer className="bg-[var(--primary)] text-white">
       <div className="container mx-auto px-4 py-12">
         {/* Logo Section */}
         <div className="flex justify-start mb-8">
           <Link href="/" className="flex items-center">
             <Image
-              src={mhrLogo}
+              src={mhrLogo} 
               alt="Mystic Heaven Reality"
               width={150}
               height={60}

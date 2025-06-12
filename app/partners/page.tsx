@@ -11,56 +11,50 @@ import ourpartners7 from "@/app/assets/ourpartners7.png"
 import ourpartners4 from "@/app/assets/ourpartners4.png"
 import partnerpageheroimage from "@/app/assets/partnerpageheroimage.png"
 
-const partners = [ 
+const partners = [
   {
     id: "1",
-    name: "Danube Properties",
+    name: "Sobha Realty",
     logo: ourpartners1,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Sobha Realty is a leading luxury real estate developer known for its commitment to quality and innovation in the real estate sector. With a strong presence in the UAE, Sobha Realty has delivered numerous landmark projects that redefine luxury living.",
   },
   {
     id: "2",
-    name: "Sobha Realty",
+    name: "Danube Properties",
     logo: ourpartners2,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Danube Properties is a leading private master developer in the UAE, known for its innovative and high-quality real estate projects. The company has established itself as a trusted name in the industry with a diverse portfolio of residential and commercial properties.",
   },
   {
     id: "3",
     name: "Damac",
     logo: ourpartners3,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "DAMAC Properties has been at the forefront of the Middle East's luxury real estate market since 2002, delivering iconic developments. The company is known for its high-quality properties and strategic locations across the region.",
   },
   {
     id: "4",
-    name: "Arada",
-    logo: ourpartners5,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    id: "5",
     name: "Emaar",
     logo: ourpartners4,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Emaar Properties is one of the world's most valuable and admired real estate development companies. With proven competencies in property, shopping malls & retail, and hospitality & leisure, Emaar has reshaped the global property landscape.",
   },
   {
-    id: "6",
-    name: "Danube Properties",
-    logo: ourpartners6,
+    id: "7",
+    name: "Meraas",
+    logo: ourpartners7,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Meraas is a Dubai-based holding company that develops and manages an extensive portfolio of companies in the design, hospitality, real estate, and food and beverage sectors. Meraas is known for its innovative approach to urban development and community building.",
   },
 ]
 
 const topPartners = [
-  { name: "Danube Properties", logo: ourpartners1 },
-  { name: "Sobha Realty", logo: ourpartners2 },
+  { name: "Sobha Realty", logo: ourpartners1 },
+  { name: "Danube Properties", logo: ourpartners2 },
   { name: "Damac", logo: ourpartners3 },
-  { name: "Arada", logo: ourpartners5 },
+  { name: "Emaar", logo: ourpartners4 },
+  { name: "Meraas", logo: ourpartners7 },
 ]
 
 export default function PartnersPage() {

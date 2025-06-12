@@ -52,24 +52,39 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-screen min-h-[600px] overflow-hidden">
-      {/* Background Images without Animation */}
-      <div className="absolute inset-0 z-0">
-        <motion.div
-          key={activeImageIndex}
-          // initial={{ opacity:0.5, y: 100,z:-10,scale:0.5 }}
-          // animate={{ opacity: 1, y: 0,z:0,scale:1 }}
-          // exit={{ opacity: 0.5, y: -100,z:-10,scale:0.5 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="absolute inset-0"
-        >
-          <Image
-            src={heroImages[activeImageIndex].src || "/placeholder.svg"}
-            alt={heroImages[activeImageIndex].alt}
-            fill
-            priority
-            className="object-cover"
-          />
-        </motion.div>
+      {/* Background Images with Smooth Animation */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {heroImages.map((image, index) => (
+          <motion.div
+            key={image.id}
+            className="absolute inset-0"
+            initial={false}
+            animate={{
+              opacity: index === activeImageIndex ? 1 : 0,
+              scale: index === activeImageIndex ? 1 : 1.05,
+              zIndex: index === activeImageIndex ? 1 : 0,
+            }}
+            transition={{
+              duration: 0.8,
+              ease: [0.4, 0, 0.2, 1],
+            }}
+            style={{
+              transformOrigin: 'center',
+              willChange: 'transform, opacity'
+            }}
+          >
+            <Image
+              src={image.src || "/placeholder.svg"}
+              alt={image.alt}
+              fill
+              priority
+              className="object-cover"
+              style={{
+                willChange: 'transform, opacity',
+              }}
+            />
+          </motion.div>
+        ))}
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
@@ -172,30 +187,12 @@ export default function HeroSection() {
                     transition={{ duration: 0.3 }}
                   />
                 )}
-
-                {/* Image indicator dots */}
-                <div className="absolute bottom-2 right-2">
-                  <div
-                    className={`w-3 h-3 rounded-full ${index === activeImageIndex ? "bg-[#5E2D4F]" : "bg-white/50"}`}
-                  />
-                </div>
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Image indicators for mobile */}
-        <div className="lg:hidden flex justify-center mt-8 space-x-2">
-          {heroImages.map((_, index) => (
-            <button
-              key={index}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === activeImageIndex ? "bg-[#5E2D4F] scale-125" : "bg-white/50"
-              }`}
-              onClick={() => handleImageClick(index)}
-            />
-          ))}
-        </div>
+
       </div>
     </section>
   )

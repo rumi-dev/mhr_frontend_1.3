@@ -1,9 +1,19 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { Search, MapPin, Filter, ChevronDown, ChevronUp, Star, Bed, Square, Bath, Car, Ruler, Phone, Mail, MessageCircle } from "lucide-react"
 import Image from "next/image"
-import { Search, Phone, Mail, MessageCircle } from "lucide-react"
+import Link from "next/link"
+import { motion } from "framer-motion"
+import dynamic from 'next/dynamic'
+import PropertyCard from "@/components/ui/PropertyCard"
+
+// Dynamically import the GoogleMap component with SSR disabled
+const GoogleMapComponent = dynamic(
+  () => import('@/components/map/GoogleMap'),
+  { ssr: false }
+)
+
 import propertyimage1 from "@/app/assets/propertyimage1.png"
 import propertyimage2 from "@/app/assets/propertyimage2.png"
 import propertyimage3 from "@/app/assets/propertyimage3.png"
@@ -74,15 +84,17 @@ export default function ViewDetailsPage() {
             </div>
           </div>
           <div>
-            <div className="flex justify-center items-center space-x-4 mb-8">
-              <Search className="w-6 h-6" />
-              <input
-                type="text"
-                placeholder="Enter City, Community or Area"
-                className="bg-white/10 border border-white/30 rounded-md px-4 py-3 text-white placeholder-white/70 w-96"
-              />
-              <select className="bg-black/5 border border-white/30 rounded-md px-4 py-3 text-white">
-                <option >Villa</option>
+            <div className="flex flex-wrap gap-3 justify-center items-stretch mb-8">
+              <div className="relative flex-1 min-w-[220px] max-w-full">
+                <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Enter City, Community or Area"
+                  className="bg-white/10 border border-white/30 rounded-md pl-10 pr-4 py-3 text-white placeholder-white/70 w-full"
+                />
+              </div>
+              <select className="bg-black/5 border border-white/30 rounded-md px-4 py-3 text-white min-w-[140px]">
+                <option>Villa</option>
                 <option>Apartment</option>
                 <option>Penthouse</option>
               </select>
@@ -94,9 +106,9 @@ export default function ViewDetailsPage() {
       {/* Main Content */}
       <section className="py-8">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-[600px] w-full">
+          <div className="flex flex-col lg:flex-row gap-6 w-full">
             {/* Map Section */}
-            <div className="relative w-full h-full">
+            <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
               <h2 className="text-2xl font-bold text-white mb-4">LUXURY PROPERTIES</h2>
 
               {/* Location Tabs */}
@@ -120,30 +132,24 @@ export default function ViewDetailsPage() {
               </div>
 
               {/* Map */}
-              <div className="relative h-[500px] bg-gray-800 rounded-lg overflow-hidden">
-                <Image 
-                  src={require('@/app/assets/viewmapPageMap.png')} 
-                  alt="Map" 
-                  fill 
-                  className="object-cover" 
-                />
-               
+              <div className="relative h-[300px] sm:h-[380px] md:h-[450px] lg:h-[500px] bg-gray-800 rounded-lg overflow-hidden">
+                <GoogleMapComponent />
               </div>
             </div>
 
             {/* Properties List */}
-            <div className="space-y-4 overflow-y-auto pr-2">
+            <div className="w-full lg:w-1/2 space-y-4 pr-0 lg:pr-2 max-h-[600px] overflow-y-auto">
               {properties.map((property, index) => (
                 <motion.div
                   key={property.id}
                   className="bg-white rounded-lg overflow-hidden shadow-lg"
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
                 >
                   <div className="flex w-full">
                     <div className="w-1/3 flex-shrink-0">
-                      <div className="relative w-full h-32">
+                      <div className="relative w-full h-24 sm:h-32">
                         <Image
                           src={property.image || "/placeholder.svg"}
                           alt={property.title}
@@ -152,9 +158,9 @@ export default function ViewDetailsPage() {
                         />
                       </div>
                     </div>
-                    <div className="w-2/3 p-4">
-                      <h3 className="font-bold mb-1">{property.title}</h3>
-                      <p className="text-gray-600 text-sm mb-2">{property.location}</p>
+                    <div className="w-2/3 p-3 sm:p-4">
+                      <h3 className="font-bold mb-1 text-base sm:text-lg">{property.title}</h3>
+                      <p className="text-gray-600 text-xs sm:text-sm mb-2">{property.location}</p>
                       <div className="flex justify-between items-center mb-3">
                         <span className="text-lg font-bold">{property.price}</span>
                         <span className="text-gray-600">{property.type}</span>
