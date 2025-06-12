@@ -59,7 +59,7 @@ export default function ContactPage() {
           </motion.h1>
 
           <motion.button
-            className="bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105"
+            className="bg-[var(--primary)] hover:brightness-110 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -103,6 +103,8 @@ export default function ContactPage() {
                 href="https://instagram.com"
                 className="bg-white p-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-110"
                 aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Instagram className="w-6 h-6 text-gray-800" />
               </Link>
@@ -110,6 +112,8 @@ export default function ContactPage() {
                 href="https://linkedin.com"
                 className="bg-white p-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-110"
                 aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Linkedin className="w-6 h-6 text-gray-800" />
               </Link>
@@ -117,6 +121,8 @@ export default function ContactPage() {
                 href="https://facebook.com"
                 className="bg-white p-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-110"
                 aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Facebook className="w-6 h-6 text-gray-800" />
               </Link>
@@ -124,6 +130,8 @@ export default function ContactPage() {
                 href="mailto:info@mysticheavenrealty.com"
                 className="bg-white p-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-110"
                 aria-label="Email"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Mail className="w-6 h-6 text-gray-800" />
               </Link>

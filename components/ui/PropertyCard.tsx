@@ -27,7 +27,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
 
         <p className="text-gray-600 text-sm mb-4 line-clamp-3">{property.description}</p>
 
-        <Link href={`/properties/${property.id}`} className="inline-block text-primary-600 hover:underline">
+        <Link href={`/properties/viewdetails/${property.id}`} className="inline-block text-primary-600 hover:underline">
           View Details
         </Link>
       </div>

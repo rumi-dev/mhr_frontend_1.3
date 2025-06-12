@@ -3,7 +3,14 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { MapPin, Bed, Square, Check, Globe } from "lucide-react"
+import { MapPin, Bed, Square, Check } from "lucide-react"
+import dynamic from 'next/dynamic';
+
+// Dynamically import the GoogleMap component with SSR disabled
+const GoogleMapComponent = dynamic(
+  () => import('@/components/map/GoogleMap'),
+  { ssr: false }
+);
 import propertyimage1 from "@/app/assets/propertyimage1.png"
 import propertyimage2 from "@/app/assets/propertyimage2.png"
 import propertyimage3 from "@/app/assets/propertyimage3.png"
@@ -159,22 +166,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Image 
-              src={require('@/app/assets/viewmapPageMap.png')} 
-              alt="Property Location" 
-              fill 
-              className="object-cover" 
-            />
-            {/* Map Marker */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div className="bg-blue-600 w-12 h-16 relative">
-                <div className="absolute top-2 left-1/2 transform -translate-x-1/2">
-                  <div className="w-8 h-8 bg-white rounded-sm flex items-center justify-center">
-                    <div className="w-6 h-6 bg-blue-600 rounded-sm"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <GoogleMapComponent />
           </motion.div>
         </div>
       </section>

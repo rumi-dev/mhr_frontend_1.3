@@ -60,7 +60,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl font-bold mb-2">About Us</h2>
-            <p className="text-xl text-pink-400">Guiding Your Home</p>
+            <p className="text-xl text-[var(--primary)]">Guiding Your Home</p>
           </motion.div>
         </div>
 
