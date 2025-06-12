@@ -8,6 +8,7 @@ import Footer from "@/components/layout/Footer"
 import { useEffect, useState } from 'react'
 import LoadingScreen from '@/components/layout/LoadingScreen'
 import { metadata } from "@/components/layout/Metadata"
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -45,6 +46,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {showLoadingScreen && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
         <div style={{ visibility: showLoadingScreen ? 'hidden' : 'visible' }}>
+        <Analytics/> 
           <Header />
           <main>{children}</main>
           <Footer />
