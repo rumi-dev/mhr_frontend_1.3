@@ -145,7 +145,7 @@ export default function PartnersPage() {
                   <p className="text-gray-600 text-sm mb-6 leading-relaxed">{partner.description}</p>
                 </div>
                 <div className="mt-4">
-                  <button className="w-full bg-primary-700 hover:bg-primary-800 text-white py-3 px-4 rounded-md transition-colors">
+                  <button className="w-full bg-[var(--primary)] hover:bg-[var(--primary)]/80 text-white py-3 px-4 rounded-md transition-colors">
                     View Details
                   </button>
                 </div>

@@ -148,7 +148,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
               </div>
 
               {/* Schedule Visit Button */}
-              <button className="w-full bg-purple-600 hover:bg-purple-700 text-white py-4 px-8 rounded-md text-lg font-medium transition-colors">
+              <button className="w-full bg-[var(--primary)] hover:bg-[var(--primary)]/80 text-white py-4 px-8 rounded-md text-lg font-medium transition-colors">
                 Schedule a Visit
               </button>
             </motion.div>

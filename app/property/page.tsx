@@ -119,8 +119,8 @@ export default function PropertiesPage() {
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}>
             <Link
-              href="/properties/map"
-              className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-md flex items-center mx-auto w-fit transition-colors"
+              href="/property/map"
+              className="bg-[var(--primary)] hover:bg-[var(--primary)]/80 text-white px-8 py-3 rounded-md flex items-center mx-auto w-fit transition-colors"
             >
               <MapPin className="w-5 h-5 mr-2" />
               View Properties Map
@@ -150,7 +150,7 @@ export default function PropertiesPage() {
                   <div className="flex items-center space-x-4">
                     <span className="text-sm">$300000</span>
                     <div className="flex-1 h-2 bg-gray-200 rounded">
-                      <div className="h-full bg-primary-600 rounded" style={{ width: "60%" }}></div>
+                      <div className="h-full bg-[var(--primary)] rounded" style={{ width: "60%" }}></div>
                     </div>
                     <span className="text-sm">$500000</span>
                   </div>
@@ -229,8 +229,8 @@ export default function PropertiesPage() {
                         <span className="text-gray-600">{property.type}</span>
                       </div>
                       <Link
-                        href={`/properties/viewdetails/${property.id}`}
-                        className="w-full bg-primary-700 hover:bg-primary-800 text-white py-2 px-4 rounded-md transition-colors block text-center"
+                        href={`/property/viewdetails/${property.id}`}
+                        className="w-full bg-[var(--primary)] hover:bg-[var(--primary)]/80 text-white py-2 px-4 rounded-md transition-colors block text-center"
                       >
                         View Details
                       </Link>

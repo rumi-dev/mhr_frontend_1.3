@@ -1,27 +1,46 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Globe } from "lucide-react"
+import { IoMdArrowDropright } from "react-icons/io"
+import { useRouter,usePathname } from "next/navigation"
 import mhrLogo from "@/app/assets/MHR Logo.png"
 
 const navItems = [
-  { label: "Home", href: "/" },
-  { label: "Properties", href: "/properties" },
-  { label: "About Us", href: "/about" },
-  { label: "For Buyers", href: "/buyers" },
-  { label: "Partners", href: "/partners" },
-  { label: "Contact Us", href: "/contact" },
+  { key: 1, label: "Home", href: "/" },
+  { key: 2, label: "Properties", href: "/property" },
+  { key: 3, label: "About Us", href: "/about" },
+  { key: 4, label: "For Buyers", href: "/buyers" },
+  { key: 5, label: "Partners", href: "/partners" },
+  { key: 6, label: "Contact Us", href: "/contact" },
 ]
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <motion.header
-      className="fixed w-full z-50 bg-black/30 backdrop-blur-sm text-white"
+      className={`fixed w-full z-50 text-white ${isScrolled ? 'bg-[var(--primary)]' : ''}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -41,9 +60,13 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6">
           {navItems.map((item) => (
-            <Link key={item.label} href={item.href} className="hover:text-primary-400 transition-colors">
-              {item.label}
-            </Link>
+            <div key={item.key} className="flex items-center">
+              { pathname == item.href && <IoMdArrowDropright className="w-4 h-4 mr-2" />}
+              <Link href={item.href} className="hover:text-primary-400 transition-colors">
+                {item.label}
+              </Link>
+               {navItems.length !== item.key && <div className="w-px h-full bg-white mx-3"></div>}
+            </div>
           ))}
         </nav>
 
@@ -75,7 +98,7 @@ export default function Header() {
           <div className="container mx-auto px-4 py-2">
             {navItems.map((item) => (
               <Link
-                key={item.label}
+                key={item.key}
                 href={item.href}
                 className="block py-2 hover:text-primary-400 transition-colors"
                 onClick={() => setIsOpen(false)}
