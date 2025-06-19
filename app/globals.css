@@ -15,6 +15,9 @@ html, body {
 
 :root {
   --primary: #5E2D4F;
+  --primary2: #FF5ACD;
+
+  
   --secondary: #e91e63;
   --background: #ffffff;
   --text: #333333;

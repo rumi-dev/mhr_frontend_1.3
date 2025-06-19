@@ -33,7 +33,7 @@ const featuredProperties: Property[] = [
     price: "$3,500,000",
     location: "Emirates Hills",
     description:
-      "Exclusive 7-bedroom mansion with private marina, home theater, and expansive outdoor entertaining areas in a gated community.",
+      "Stunning 5-bedroom villa with private beach access, infinity pool, and panoramic sea views in one of Dubai's most prestigious locations.",
     image: mainpageFeature3,
   },
 ]
@@ -41,7 +41,7 @@ const featuredProperties: Property[] = [
 export default function FeaturedProjects() {
   return (
     <section className="py-16 bg-black">
-      <div className="container mx-auto px-4">
+      <div className="">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -49,11 +49,15 @@ export default function FeaturedProjects() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-400 mb-2">Featured Projects</h2>
-          <p className="text-white">Showcasing The Best Deal Of Mystic Heaven Realty</p>
+          <div className="flex flex-row items-center">
+            <div className="h-3 bg-gradient-to-r from-[#D9D9D9] to-[#000000] flex-1"></div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FFAE6A] mx-2 sm:mx-4 md:mx-6 mb-2">Featured Projects</h2>
+            <div className="h-3 bg-gradient-to-r from-[#000000] to-[#D9D9D9] flex-1"></div>
+          </div>
+          <p className="text-white text-base sm:text-lg md:text-xl mt-2">Showcasing The Best Deal Of Mystic Heaven Realty</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-8 mx-auto px-10 sm:px-6 lg:px-8">
           {featuredProperties.map((property, index) => (
             <motion.div
               key={property.id}

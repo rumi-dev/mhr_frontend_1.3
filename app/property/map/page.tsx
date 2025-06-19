@@ -115,7 +115,7 @@ export default function ViewDetailsPage() {
               <div className="flex space-x-2 mb-4">
                 <button
                   className={`px-4 py-2 rounded-md transition-all duration-300 ${
-                    activeTab === "Dubai" ? "bg-pink-500 text-white" : "bg-white/20 text-white hover:bg-white/30"
+                    activeTab === "Dubai" ? "bg-[var(--primary)] text-white" : "bg-white/20 text-white hover:bg-white/30"
                   }`}
                   onClick={() => setActiveTab("Dubai")}
                 >
@@ -123,7 +123,7 @@ export default function ViewDetailsPage() {
                 </button>
                 <button
                   className={`px-4 py-2 rounded-md transition-all duration-300 ${
-                    activeTab === "India" ? "bg-pink-500 text-white" : "bg-white/20 text-white hover:bg-white/30"
+                    activeTab === "India" ? "bg-[var(--primary)] text-white" : "bg-white/20 text-white hover:bg-white/30"
                   }`}
                   onClick={() => setActiveTab("India")}
                 >
