@@ -45,7 +45,7 @@ export const AboutContentSection = () => {
             <h2 className="text-4xl font-bold text-[#FFAE6A] mx-2 sm:mx-4 md:mx-6 mb-2">About Us</h2>
             <div className="h-3 bg-gradient-to-r from-[#000000] to-[#D9D9D9] flex-1"></div>
           </div>
-          <p className="text-xl text-[var(--primary)]">Guiding Your Home</p>
+          <p className="text-xl text-white">Guiding Your Home</p>
         </motion.div>
       </div>
 
