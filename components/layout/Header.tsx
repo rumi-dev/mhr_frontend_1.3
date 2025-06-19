@@ -6,7 +6,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { Globe } from "lucide-react"
 import { IoMdArrowDropright } from "react-icons/io"
-import { useRouter,usePathname } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 import mhrLogo from "@/app/assets/MHR Logo.png"
 
 const navItems = [
@@ -22,7 +22,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
-  
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -58,24 +58,22 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-6">
+        <nav className="hidden md:flex ">
           {navItems.map((item) => (
             <div key={item.key} className="flex items-center">
-              { pathname == item.href && <IoMdArrowDropright className="w-4 h-4 mr-2" />}
+              {pathname == item.href && <IoMdArrowDropright className="w-4 h-4 mr-2" />}
               <Link href={item.href} className="hover:text-primary-400 transition-colors">
                 {item.label}
               </Link>
-               {navItems.length !== item.key && <div className="w-px h-full bg-white mx-3"></div>}
+              {navItems.length !== item.key && <div className="w-px h-full bg-white mx-3"></div>}
             </div>
           ))}
         </nav>
 
-        <button className="flex items-center">
           <Globe className="w-5 h-5" />
-        </button>
 
         {/* Mobile Navigation Toggle */}
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden  " onClick={() => setIsOpen(!isOpen)}>
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               strokeLinecap="round"

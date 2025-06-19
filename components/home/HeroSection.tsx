@@ -89,7 +89,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex flex-col justify-center py-24 md:py-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex flex-col justify-center  py-24 md:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
           <div className="lg:col-span-2 text-white">
             <motion.p
@@ -109,9 +109,9 @@ export default function HeroSection() {
             >
               Your Dream <span className="text-[#FF96DD]">Home</span>, Awaits
             </motion.h1>
-
+            
             <motion.div
-              className="flex space-x-2 "
+              className="flexspace-x-2 mt-10"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
@@ -145,7 +145,6 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
             >
-              <div className="  ">
                 <div className="flex flex-col justify-center  bg-white px-4 py-3 rounded-lg sm:flex-row gap-2">
                   <div className="px-4 flex items-center border border-[#5E2D4F]">
                     <Search className=" h-5 text-[#5E2D4F]" />
@@ -163,7 +162,6 @@ export default function HeroSection() {
                 >     
                   Search
                 </button>
-                </div>
               
               </div>
             </motion.form>

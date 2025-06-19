@@ -85,7 +85,11 @@ export default function ContactPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h2>
+            <div className="flex flex-row items-center mb-4">
+              <div className="h-3 bg-gradient-to-r from-[#000000] to-[#D9D9D9] flex-1"></div>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#FFAE6A] mx-2 sm:mx-4 md:mx-6 mb-2">Contact Us</h2>
+              <div className="h-3 bg-gradient-to-r from-[#D9D9D9] to-[#000000] flex-1"></div>
+            </div>
             <p className="text-white/90 text-lg max-w-2xl mx-auto mb-12">
               Get in touch with Mystic Haven Realty. We're here to help you find your dream home or the perfect
               investment property.

@@ -57,7 +57,7 @@ export default function FeaturedProjects() {
           <p className="text-white text-base sm:text-lg md:text-xl mt-2">Showcasing The Best Deal Of Mystic Heaven Realty</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-8 mx-auto px-10 sm:px-6 lg:px-8">
           {featuredProperties.map((property, index) => (
             <motion.div
               key={property.id}
